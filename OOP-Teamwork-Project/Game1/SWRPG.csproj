@@ -38,8 +38,27 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Jedi.cs" />
+    <Compile Include="Characters\SepciesType.cs" />
+    <Compile Include="Characters\Stormtrooper.cs" />
+    <Compile Include="Engine\MainGame.cs" />
+    <Compile Include="Engine\Messages.cs" />
+    <Compile Include="Exceptions\GameException.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IJedi.cs" />
+    <Compile Include="Items\Armor\Armor.cs" />
+    <Compile Include="Items\Armor\BodyArmor.cs" />
+    <Compile Include="Items\Armor\HeavyArmor.cs" />
+    <Compile Include="Items\Armor\LightArmor.cs" />
+    <Compile Include="Items\Enhancements\Enhancement.cs" />
+    <Compile Include="Items\Enhancements\ForceBall.cs" />
+    <Compile Include="Items\Weapons\DoublebladedLightsaber.cs" />
+    <Compile Include="Items\Weapons\DualLightsaber.cs" />
+    <Compile Include="Items\Weapons\Lightsaber.cs" />
+    <Compile Include="Items\Weapons\Weapon.cs" />
+    <Compile Include="SWMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +74,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

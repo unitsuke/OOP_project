@@ -23,3 +23,5 @@ C:\Users\Tsvetelin\Desktop\SoftUni\OOP\OOP-Teamwork-Project\Game1\bin\Windows\De
 C:\Users\Tsvetelin\Desktop\SoftUni\OOP\OOP-Teamwork-Project\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
 C:\Users\Tsvetelin\Desktop\SoftUni\OOP\OOP-Teamwork-Project\Game1\obj\x86\Debug\Game1.exe
 C:\Users\Tsvetelin\Desktop\SoftUni\OOP\OOP-Teamwork-Project\Game1\obj\x86\Debug\Game1.pdb
+C:\Users\Valio\Desktop\SWOOP\OOP-Teamwork-Project\Game1\obj\x86\Debug\Game1.exe
+C:\Users\Valio\Desktop\SWOOP\OOP-Teamwork-Project\Game1\obj\x86\Debug\Game1.pdb
