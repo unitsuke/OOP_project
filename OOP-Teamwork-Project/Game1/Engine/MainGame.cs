@@ -18,7 +18,8 @@ namespace SWRPG
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            this.Window.Title = "Star Wars RPG";
+            Window.Title = "Star Wars RPG";
+            IsMouseVisible = true;
         }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace SWRPG
             // TODO: use this.Content to load your game content here
             player = new Jedi(new Vector2(100, 100));
             player.LoadContent(Content);
+
         }
 
         /// <summary>
@@ -68,7 +70,6 @@ namespace SWRPG
             // TODO: Add your update logic here
 
             player.Update(gameTime);
-            
             base.Update(gameTime);
         }
         
