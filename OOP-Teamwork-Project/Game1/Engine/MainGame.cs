@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SWRPG.Characters;
 
 namespace SWRPG
 {
@@ -11,11 +12,13 @@ namespace SWRPG
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Jedi player;
 
         public MainGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.Window.Title = "Star Wars RPG";
         }
 
         /// <summary>
@@ -27,7 +30,6 @@ namespace SWRPG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -41,6 +43,8 @@ namespace SWRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            player = new Jedi(new Vector2(100, 100));
+            player.LoadContent(Content);
         }
 
         /// <summary>
@@ -59,13 +63,15 @@ namespace SWRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
             // TODO: Add your update logic here
 
+            player.Update(gameTime);
+            
             base.Update(gameTime);
         }
+        
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -74,9 +80,10 @@ namespace SWRPG
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
-
+            player.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
