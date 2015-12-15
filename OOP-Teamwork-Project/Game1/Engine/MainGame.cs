@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SWRPG.Characters;
+using SWRPG.HUD.StatBars;
 
 namespace SWRPG
 {
@@ -13,6 +14,7 @@ namespace SWRPG
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Jedi player;
+        StatBar healthBar;
 
         public MainGame()
         {
@@ -46,7 +48,8 @@ namespace SWRPG
             // TODO: use this.Content to load your game content here
             player = new Jedi(new Vector2(100, 100));
             player.LoadContent(Content);
-
+            healthBar = new StatBar(new Vector2(200, 200),new Rectangle());
+            healthBar.LoadContent(Content, "Graphics/healthBar");
         }
 
         /// <summary>
@@ -70,6 +73,7 @@ namespace SWRPG
             // TODO: Add your update logic here
 
             player.Update(gameTime);
+            healthBar.Update(gameTime, -1);
             base.Update(gameTime);
         }
         
@@ -84,6 +88,7 @@ namespace SWRPG
             spriteBatch.Begin();
             // TODO: Add your drawing code here
             player.Draw(spriteBatch);
+            healthBar.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

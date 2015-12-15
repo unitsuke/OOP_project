@@ -87,6 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Graphics\healthBar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Graphics\playerSheet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

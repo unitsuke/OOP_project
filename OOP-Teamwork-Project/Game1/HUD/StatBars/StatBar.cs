@@ -10,24 +10,28 @@ namespace SWRPG.HUD.StatBars
 {
     class StatBar
     {
-        public StatBar(Vector2 position, Texture2D texture, Rectangle rectangle)
+        private int width;
+        private int height;
+
+        public StatBar(Vector2 position, Rectangle rectangle)
         {
-            Width = texture.Width;
-            Height = texture.Height;
+
         }
         public Vector2 Position { get; set; }
         public Texture2D Texture { get; set; }
         public Rectangle Rectangle { get; set; }
-        public int Width { get; set; }
+        public int Width  { get; set; }
         public int Height { get; set; }
-
         public virtual void LoadContent(ContentManager content,string filePath)
         {
             Texture = content.Load<Texture2D>(filePath);
+            Height = Texture.Height;
+            Width = Texture.Width;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, int updateValue)
         {
+            Width += updateValue;
             Rectangle = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
         }
         public void Draw(SpriteBatch spriteBatch)
